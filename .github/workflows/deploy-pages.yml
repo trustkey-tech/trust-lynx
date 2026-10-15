@@ -1,11 +1,12 @@
-name: Deploy Trust Key contact page to GitHub Pages
+name: Deploy Trust Lynx shipping page to GitHub Pages
 
 on:
   push:
     branches:
       - main
     paths:
-      - "connect/**"
+      - "index.html"
+      - "trust-lynx-logo.jpg"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -31,10 +32,10 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload contact page
+      - name: Upload Trust Lynx site root
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./connect
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
